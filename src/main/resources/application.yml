@@ -1,6 +1,9 @@
 spring:
   application:
     name: top-10-books
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 app:
   dataset:

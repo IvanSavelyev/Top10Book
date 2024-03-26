@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: top-10-books
+
+app:
+  dataset:
+    filename: data/goodreads_top100_from1980to2023_final.csv
+    limit: 10
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api/top10
+    encoding:
+      charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+      enabled: true # Enable http encoding support
+      force: true

@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.6'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.luxms'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '11'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('lombokVersion', "1.18.32")
+    set('opencsvVersion', "5.8")
+}
+
+dependencies {
+    implementation 'com.opencsv:opencsv:5.8'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.google.guava:guava:33.1.0-jre'
+    compileOnly 'org.projectlombok:lombok:'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
